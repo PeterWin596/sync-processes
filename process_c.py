@@ -8,7 +8,7 @@ def process_c(int_shared, str_shared):
     
     # Step 3: Write "30" to shared integer memory and string for Process C
     int_shared.value = 30
-    str_shared[:] = b"I am Process C"
+    str_shared[:] = b"I am Process C" + b" " * (20 - len(b"I am Process C"))
     print(f"Process C: {str_shared.value.decode()}")
     # Quit after writing
 

@@ -5,7 +5,7 @@ import os
 def process_a(int_shared, str_shared):
     # Step 1: Write "10" to shared integer memory and string for Process A
     int_shared.value = 10
-    str_shared[:] = b"I am Process A"
+    str_shared[:] = b"I am Process A" + b" " * (20 - len(b"I am Process A"))
     print(f"Process A: {str_shared.value.decode()}")
     
     # Wait until Process B writes
