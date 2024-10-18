@@ -4,6 +4,7 @@ import time
 def process_b(int_shared, str_shared):
     # Polling until Process A writes "10" to shared memory
     while int_shared.value != 10:
+        print(f"Process B waiting... (shared integer = {int_shared.value})")
         time.sleep(0.1)
     
     # Step 2: Write "20" to shared integer memory and string for Process B
